@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitcoin for Businesses | Giant Steps Learning</title>
+  <meta name="description" content="A practical Canadian guide to accepting Bitcoin, choosing a payment setup, convert-versus-hold treasury, and GST/HST notes for business owners.">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">₿</span>
+        <span class="brand-text">
+          <span class="brand-name">Giant Steps</span>
+          <span class="brand-sub">Learning</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="learn.html">Learn</a></li>
+          <li><a href="businesses.html" aria-current="page">Businesses</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle>Dark</button>
+        <a class="btn btn-sm" href="learn.html">Get off zero</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">For businesses</p>
+        <h1>Accept Bitcoin without turning your shop into a trading desk.</h1>
+        <p>A calm owner’s guide: why accept it, how payments work, convert versus hold, and Canadian tax notes you should take to your accountant — not as a substitute for one.</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="wrap prose">
+        <nav class="toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <ol>
+            <li><a href="#why">Why accept Bitcoin</a></li>
+            <li><a href="#how">How payments work</a></li>
+            <li><a href="#setup">Choosing a setup</a></li>
+            <li><a href="#treasury">Convert or hold</a></li>
+            <li><a href="#canada">Canadian GST/HST notes</a></li>
+            <li><a href="#policy">A simple policy</a></li>
+            <li><a href="#start">A first-week checklist</a></li>
+          </ol>
+        </nav>
+
+        <div class="warning" role="note">
+          <p><strong>Educational only.</strong> This is not legal, tax, accounting, or payment-processing advice. Payment rules, CRA interpretations, and processor features change. Speak with your accountant and, if needed, a lawyer before you change how you take money.</p>
+        </div>
+
+        <h2 id="why">Why businesses accept Bitcoin</h2>
+        <p>The honest reasons are practical, not ideological:</p>
+        <ul>
+          <li><strong>A new customer set.</strong> Some people prefer to spend bitcoin. If you do not accept it, they spend it somewhere else.</li>
+          <li><strong>Lower friction for some payments.</strong> Lightning invoices can settle in seconds, including from visitors who do not have a Canadian card.</li>
+          <li><strong>Optional treasury.</strong> You can convert every payment to CAD the same day — or keep a defined slice as long-term savings. That is a policy choice, not a personality test.</li>
+          <li><strong>Signal.</strong> “We accept bitcoin” tells a specific customer that you are paying attention. Use it if it matches the business. Do not fake it.</li>
+        </ul>
+        <p>What it is not: a guarantee of more revenue, a way to skip taxes, or a replacement for a bank account.</p>
+
+        <h2 id="how">How Bitcoin payments work</h2>
+        <p>A customer pays an invoice denominated in CAD (or in sats). Software quotes a bitcoin amount at the current rate, usually with a short expiry. When the network confirms (or Lightning settles), you have been paid.</p>
+        <p>Two rails matter:</p>
+        <ul>
+          <li><strong>On-chain:</strong> the base Bitcoin network. Fine for larger invoices. Fees and confirmation time vary.</li>
+          <li><strong>Lightning:</strong> faster, cheaper payments on top of Bitcoin. Better for coffee, tickets, and retail.</li>
+        </ul>
+        <p>You do not need to explain any of that to a customer. They scan a QR code. You see “paid.”</p>
+
+        <h2 id="setup">Choosing a setup</h2>
+        <p>Pick the level of control that matches your team — not a Twitter argument.</p>
+        <div class="table-wrap">
+          <table>
+            <caption>Common ways Canadian businesses take bitcoin</caption>
+            <thead>
+              <tr>
+                <th scope="col">Approach</th>
+                <th scope="col">Best for</th>
+                <th scope="col">Trade-off</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hosted processor (OpenNode, Strike, similar)</td>
+                <td>Fast launch, staff who should not touch keys</td>
+                <td>You trust a company. Read fees, settlement currency, and Canada availability.</td>
+              </tr>
+              <tr>
+                <td>Self-hosted (BTCPay Server)</td>
+                <td>Owners who want invoices they control</td>
+                <td>More setup and maintenance. Excellent long-term option.</td>
+              </tr>
+              <tr>
+                <td>Manual invoice (wallet QR)</td>
+                <td>Rare, high-touch sales</td>
+                <td>Easy to misprice or miss a payment. Not for a busy till.</td>
+              </tr>
+              <tr>
+                <td>Convert-to-CAD payout</td>
+                <td>Businesses that need fiat for rent and payroll</td>
+                <td>You capture the sale, not the bitcoin. Still keep records.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Shakepay is excellent for <em>buying and holding</em> as a Canadian. Merchant acceptance is a different job. Use the right tool for the till, then a Canadian platform or self-custody for treasury.</p>
+        <p>Whatever you choose, confirm: CAD invoicing, Lightning if you need it, payout rails, fee schedule, and that you can export every payment for bookkeeping.</p>
+
+        <h2 id="treasury">Convert or hold</h2>
+        <p>Write this down before the first payment hits.</p>
+        <ul>
+          <li><strong>Convert 100% to CAD.</strong> Simplest. Bitcoin is a payment rail. Your books stay in dollars. Volatility is mostly the customer’s.</li>
+          <li><strong>Hold a slice.</strong> Example: convert 90%, keep 10% in bitcoin under a written cap (say, one month of expenses). Rebalance on a calendar, not a feeling.</li>
+          <li><strong>Hold more.</strong> Only if the business can pay rent without that bitcoin, and you can custody it properly (hardware wallet, two-person process if there is a team).</li>
+        </ul>
+        <p>Do not mix the till wallet with the savings wallet. The till should hold as little as possible. Sweep on a schedule.</p>
+
+        <h2 id="canada">Canadian GST/HST and bookkeeping notes</h2>
+        <p>This is the part owners skip — and later regret. Take it to your accountant.</p>
+        <ul>
+          <li>CRA generally treats bitcoin as a <strong>commodity</strong>, not as Canadian currency.</li>
+          <li>When you sell goods or services for bitcoin, you still have a sale. GST/HST is typically calculated on the <strong>CAD fair market value at the time of the sale</strong>.</li>
+          <li>The bitcoin you receive then has a cost base. If you later convert it to CAD at a different price, there may be a <strong>capital gain or loss</strong> (or business income, depending on how you operate).</li>
+          <li>Issue invoices in CAD (and show the bitcoin amount / rate / time if useful). Your accountant will thank you.</li>
+          <li>Payroll, trusts, and regulated industries have extra rules. Do not improvise those.</li>
+        </ul>
+        <p>Record for every payment: date/time, CAD price charged, sats/BTC received, FX rate used, fees, invoice ID, and destination wallet. Keep those records at least six years.</p>
+        <p>For personal holdings vs business holdings, see the <a href="learn.html#taxes">Canadian tax guide</a>.</p>
+
+        <h2 id="policy">A simple one-page policy</h2>
+        <p>Print this, fill the blanks, and stick it by the till:</p>
+        <ol>
+          <li>We invoice in CAD. Software converts at the quoted rate until expiry.</li>
+          <li>We accept on-chain and/or Lightning through: ________.</li>
+          <li>Till wallet maximum: $________. Sweep schedule: ________.</li>
+          <li>Convert to CAD: ________% of each payment (or daily sweep).</li>
+          <li>Treasury cap: $________ of bitcoin, held in: ________ (hardware wallet / processor balance).</li>
+          <li>Who can spend / who has the backup: ________.</li>
+          <li>Bookkeeping export: weekly / monthly, stored with our accountant package.</li>
+        </ol>
+
+        <h2 id="start">First-week checklist</h2>
+        <ol>
+          <li>Read this page with your bookkeeper.</li>
+          <li>Pick convert-only or a written hold slice.</li>
+          <li>Choose software you can actually operate on a Saturday.</li>
+          <li>Run a $5 test payment. Export the receipt.</li>
+          <li>Train one backup person. Write the “what if the tablet dies” step.</li>
+          <li>Add a small “Bitcoin accepted” note at the till — after it actually works.</li>
+        </ol>
+        <div class="callout">
+          <p>If you are still at zero personally, learn that path first: <a href="learn.html">Get off zero</a>. A business that accepts bitcoin should have at least one owner who understands custody.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-name">Giant Steps Learning</p>
+          <p class="footer-tag">Canadian Bitcoin education. No hype. No pressure.</p>
+        </div>
+        <nav aria-label="Learn">
+          <h3>Learn</h3>
+          <ul>
+            <li><a href="learn.html">Bitcoin fundamentals</a></li>
+            <li><a href="learn.html#taxes">Canadian taxes</a></li>
+            <li><a href="businesses.html">For businesses</a></li>
+            <li><a href="resources.html">Books &amp; resources</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Site">
+          <h3>Site</h3>
+          <ul>
+            <li><a href="about.html">About / mission</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="disclaimer"><strong>Educational information only</strong> — not financial, investment, legal, or tax advice. Bitcoin is volatile. Only use money you can afford to lose. Consult a qualified Canadian professional for your situation.</p>
+      <p class="copyright">&copy; 2026 Giant Steps Learning. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="../js/site.js"></script>
+</body>
+</html>
