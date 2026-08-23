@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bitcoin for Businesses | Giant Steps Learning</title>
+  <title>Bitcoin for Businesses | Curtis Bitcoin Corporation</title>
   <meta name="description" content="A practical Canadian guide to accepting Bitcoin, choosing a payment setup, convert-versus-hold treasury, and GST/HST notes for business owners.">
   <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/styles.css">
@@ -15,8 +15,8 @@
       <a class="brand" href="../index.html">
         <span class="brand-mark" aria-hidden="true">₿</span>
         <span class="brand-text">
-          <span class="brand-name">Giant Steps</span>
-          <span class="brand-sub">Learning</span>
+          <span class="brand-name">Curtis Bitcoin</span>
+          <span class="brand-sub">Corporation</span>
         </span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -52,7 +52,8 @@
           <ol>
             <li><a href="#why">Why accept Bitcoin</a></li>
             <li><a href="#how">How payments work</a></li>
-            <li><a href="#setup">Choosing a setup</a></li>
+            <li><a href="#shakepay">Is Shakepay a till?</a></li>
+            <li><a href="#till">Exactly how to take it at the till</a></li>
             <li><a href="#treasury">Convert or hold</a></li>
             <li><a href="#canada">Canadian GST/HST notes</a></li>
             <li><a href="#policy">A simple policy</a></li>
@@ -83,53 +84,88 @@
         </ul>
         <p>You do not need to explain any of that to a customer. They scan a QR code. You see “paid.”</p>
 
-        <h2 id="setup">Choosing a setup</h2>
-        <p>Pick the level of control that matches your team — not a Twitter argument.</p>
+        <h2 id="shakepay">Is Shakepay for Business a till? No.</h2>
+        <p>We checked Shakepay’s own business page and help docs (as of August 2026). <strong>Shakepay for Business is not a point-of-sale system.</strong> It does not generate a CAD invoice QR at checkout, lock an exchange rate for this sale, or show staff a “paid” screen for that coffee.</p>
+        <p>What it actually is — and it is good at this:</p>
+        <ul>
+          <li>A <strong>business treasury account</strong> for CAD, bitcoin, and ethereum</li>
+          <li>Buy and sell bitcoin with no trading commission (their current business pitch)</li>
+          <li>Move CAD with <strong>Interac e-Transfer</strong> and <strong>same-day wires</strong> to/from a bank account in the company’s name</li>
+          <li>Statements, recurring buys, and (if you opt in) interest on the CAD balance, paid in bitcoin</li>
+        </ul>
+        <p>A customer <em>can</em> send bitcoin to your Shakepay business deposit address. That is a wallet transfer, not a till:</p>
+        <ul>
+          <li>No locked CAD price for <em>this</em> sale</li>
+          <li>No automatic match to an invoice</li>
+          <li>On-chain payments can sit unconfirmed while a line forms</li>
+          <li>Easy to mix with other deposits and lose the audit trail</li>
+        </ul>
+        <div class="warning">
+          <p><strong>Do not</strong> print a static Shakepay QR on the counter and call it “we accept bitcoin.” Do not ask the customer to Interac you and pretend that was a bitcoin payment. Use a real POS for the sale. Use Shakepay for Business <em>after</em> the sale, for treasury and CAD.</p>
+        </div>
+
+        <h2 id="till">Exactly how to accept bitcoin at the till</h2>
+        <p>The till job is always the same, whatever software you pick:</p>
+        <ol>
+          <li>Ring the sale in <strong>Canadian dollars</strong> as you already do (tax included).</li>
+          <li>Open the Bitcoin POS on a phone or tablet. Type that CAD total.</li>
+          <li>Show the customer the <strong>dynamic QR</strong> (Lightning for small tickets, on-chain as a fallback).</li>
+          <li>They pay from a Lightning/Bitcoin wallet (Phoenix, Strike, Wallet of Satoshi, and similar).</li>
+          <li>Wait for the green <strong>Paid</strong>. Lightning is usually a few seconds. Then hand over the goods.</li>
+          <li>Keep the invoice ID with the CAD amount, sats received, rate, time, and fees.</li>
+        </ol>
+        <p>That is the whole customer experience. You should not explain channels, nodes, or mempools at the counter.</p>
+
+        <h3>Pick one of these three setups</h3>
         <div class="table-wrap">
           <table>
-            <caption>Common ways Canadian businesses take bitcoin</caption>
+            <caption>Recommended till options for a Canadian shop</caption>
             <thead>
               <tr>
-                <th scope="col">Approach</th>
-                <th scope="col">Best for</th>
-                <th scope="col">Trade-off</th>
+                <th scope="col">Setup</th>
+                <th scope="col">Use when</th>
+                <th scope="col">What the staff actually do</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Hosted processor (OpenNode, Strike, similar)</td>
-                <td>Fast launch, staff who should not touch keys</td>
-                <td>You trust a company. Read fees, settlement currency, and Canada availability.</td>
+                <td><strong>Swiss Bitcoin Pay</strong> (app on a spare phone or tablet)</td>
+                <td>You want to take bitcoin <em>this week</em> with almost no IT</td>
+                <td>Type CAD → show QR → Paid. Funds go to a wallet you configure. Lightning, on-chain, and optional NFC tap.</td>
               </tr>
               <tr>
-                <td>Self-hosted (BTCPay Server)</td>
-                <td>Owners who want invoices they control</td>
-                <td>More setup and maintenance. Excellent long-term option.</td>
+                <td><strong>BTCPay Server Point of Sale</strong> (open-source, self-hosted or a hosted instance)</td>
+                <td>You want invoices you control, CSV exports, and no processor cut</td>
+                <td>Same QR flow, plus receipts and bookkeeping. Use Lightning (own node, or a Blink/Strike plugin so you are not running channels on day one). Lightspeed Retail plugin exists if that is already your POS.</td>
               </tr>
               <tr>
-                <td>Manual invoice (wallet QR)</td>
-                <td>Rare, high-touch sales</td>
-                <td>Easy to misprice or miss a payment. Not for a busy till.</td>
-              </tr>
-              <tr>
-                <td>Convert-to-CAD payout</td>
-                <td>Businesses that need fiat for rent and payroll</td>
-                <td>You capture the sale, not the bitcoin. Still keep records.</td>
+                <td><strong>OpenNode</strong> (hosted processor)</td>
+                <td>You want CAD conversion at the processor and a lightweight POS / payment links</td>
+                <td>Same QR flow. Confirm they will onboard a Canadian business and that CAD settlement still matches their current list. Typical processor fee is around 1% — verify on their site.</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p>Shakepay is excellent for <em>buying and holding</em> as a Canadian. Merchant acceptance is a different job. Use the right tool for the till, then a Canadian platform or self-custody for treasury.</p>
-        <p>Whatever you choose, confirm: CAD invoicing, Lightning if you need it, payout rails, fee schedule, and that you can export every payment for bookkeeping.</p>
+        <p><strong>Our default recommendation for a Canadian till:</strong> start with <strong>Swiss Bitcoin Pay</strong> on a dedicated device this week so staff can practice the 30-second sale. Move to <strong>BTCPay Server POS</strong> when you want the invoices and exports on infrastructure you control. Put <strong>Shakepay for Business</strong> beside that as the CAD off-ramp and company bitcoin/CAD treasury — not as the checkout.</p>
+        <p>If you already run Lightspeed Retail, add the BTCPay Lightspeed plugin instead of a second till app.</p>
 
-        <h2 id="treasury">Convert or hold</h2>
-        <p>Write this down before the first payment hits.</p>
+        <h3>What not to do at the till</h3>
         <ul>
-          <li><strong>Convert 100% to CAD.</strong> Simplest. Bitcoin is a payment rail. Your books stay in dollars. Volatility is mostly the customer’s.</li>
-          <li><strong>Hold a slice.</strong> Example: convert 90%, keep 10% in bitcoin under a written cap (say, one month of expenses). Rebalance on a calendar, not a feeling.</li>
-          <li><strong>Hold more.</strong> Only if the business can pay rent without that bitcoin, and you can custody it properly (hardware wallet, two-person process if there is a team).</li>
+          <li>A printed, unchanging bitcoin address or Shaketag</li>
+          <li>A personal wallet on the owner’s phone as the “company till”</li>
+          <li>Telling the customer to “just send $20 of bitcoin” without a quoted amount and expiry</li>
+          <li>Handing bitcoin sales through a personal Shakepay account</li>
         </ul>
-        <p>Do not mix the till wallet with the savings wallet. The till should hold as little as possible. Sweep on a schedule.</p>
+        <p>Whatever you choose, confirm before go-live: CAD pricing, Lightning for retail tickets, a paid/unpaid screen staff cannot miss, and an export your bookkeeper can open.</p>
+
+        <h2 id="treasury">Convert or hold — and where Shakepay fits</h2>
+        <p>Write this down before the first payment hits. The till collects bitcoin. Treasury decides what happens next.</p>
+        <ul>
+          <li><strong>Convert 100% to CAD.</strong> Simplest. Bitcoin is a payment rail. Sweep from the POS wallet into <a href="https://shakepay.com/business" target="_blank" rel="noopener noreferrer">Shakepay for Business</a>, sell to CAD, Interac or wire to the company bank for rent and payroll.</li>
+          <li><strong>Hold a slice.</strong> Example: convert 90% on Shakepay Business, keep 10% in bitcoin under a written cap (say, one month of expenses). Rebalance on a calendar, not a feeling.</li>
+          <li><strong>Hold more.</strong> Only if the business can pay rent without that bitcoin. Move savings off Shakepay onto a company hardware wallet with a two-person process if there is a team.</li>
+        </ul>
+        <p>Do not mix the till wallet with the savings wallet. The till device should hold as little as possible. Sweep on a schedule (end of day is fine for most shops).</p>
 
         <h2 id="canada">Canadian GST/HST and bookkeeping notes</h2>
         <p>This is the part owners skip — and later regret. Take it to your accountant.</p>
@@ -147,10 +183,10 @@
         <p>Print this, fill the blanks, and stick it by the till:</p>
         <ol>
           <li>We invoice in CAD. Software converts at the quoted rate until expiry.</li>
-          <li>We accept on-chain and/or Lightning through: ________.</li>
-          <li>Till wallet maximum: $________. Sweep schedule: ________.</li>
-          <li>Convert to CAD: ________% of each payment (or daily sweep).</li>
-          <li>Treasury cap: $________ of bitcoin, held in: ________ (hardware wallet / processor balance).</li>
+          <li>We accept Lightning (and on-chain fallback) through: ________ (Swiss Bitcoin Pay / BTCPay / OpenNode — not Shakepay).</li>
+          <li>Till wallet maximum: $________. Sweep schedule: ________ (usually end of day → Shakepay for Business or hardware wallet).</li>
+          <li>Convert to CAD on Shakepay for Business: ________% of each day’s take.</li>
+          <li>Treasury cap: $________ of bitcoin, held in: ________ (hardware wallet / Shakepay Business).</li>
           <li>Who can spend / who has the backup: ________.</li>
           <li>Bookkeeping export: weekly / monthly, stored with our accountant package.</li>
         </ol>
@@ -158,9 +194,9 @@
         <h2 id="start">First-week checklist</h2>
         <ol>
           <li>Read this page with your bookkeeper.</li>
-          <li>Pick convert-only or a written hold slice.</li>
-          <li>Choose software you can actually operate on a Saturday.</li>
-          <li>Run a $5 test payment. Export the receipt.</li>
+          <li>Pick convert-only or a written hold slice. Open Shakepay for Business for the CAD off-ramp if you need one.</li>
+          <li>Install Swiss Bitcoin Pay or BTCPay POS on a dedicated tablet. Do not use the owner’s personal phone as the till.</li>
+          <li>Run a $5 Lightning test payment. Confirm “Paid,” then export the receipt.</li>
           <li>Train one backup person. Write the “what if the tablet dies” step.</li>
           <li>Add a small “Bitcoin accepted” note at the till — after it actually works.</li>
         </ol>
@@ -175,7 +211,7 @@
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <p class="footer-name">Giant Steps Learning</p>
+          <p class="footer-name">Curtis Bitcoin Corporation</p>
           <p class="footer-tag">Canadian Bitcoin education. No hype. No pressure.</p>
         </div>
         <nav aria-label="Learn">
@@ -198,7 +234,7 @@
         </nav>
       </div>
       <p class="disclaimer"><strong>Educational information only</strong> — not financial, investment, legal, or tax advice. Bitcoin is volatile. Only use money you can afford to lose. Consult a qualified Canadian professional for your situation.</p>
-      <p class="copyright">&copy; 2026 Giant Steps Learning. All rights reserved.</p>
+      <p class="copyright">&copy; 2026 Curtis Bitcoin Corporation. All rights reserved.</p>
     </div>
   </footer>
   <script src="../js/site.js"></script>

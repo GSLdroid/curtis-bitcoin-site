@@ -1,4 +1,4 @@
-# Giant Steps Learning
+# Curtis Bitcoin Corporation
 
 Static website for Canadian Bitcoin education: **Get Off Zero** for individuals, plus a first version of **Bitcoin for businesses**.
 
@@ -25,7 +25,7 @@ Open <http://127.0.0.1:8080/>
 
 ## Brand
 
-Working public name on the pages: **Giant Steps Learning**. Easy to change later (header, footer, `<title>`, and this README). SuperGrok used “Curtis Bitcoin” as a placeholder; this starter keeps the live brand, email, X account, and Shakepay referral you already use.
+Public name on the pages: **Curtis Bitcoin Corporation**. Contact email and X handle still use the existing Giant Steps accounts until you replace them. Shakepay referral is unchanged.
 
 ## Repo layout
 

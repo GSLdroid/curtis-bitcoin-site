@@ -1,4 +1,4 @@
-/* Giant Steps Learning — design system
+/* Curtis Bitcoin Corporation — design system
    Professional, calm, Bitcoin-aligned. Light/dark via data-theme. */
 
 :root {
@@ -196,8 +196,9 @@ a:hover { color: var(--primary-hover); }
 .brand-name {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 .brand-sub {
   font-size: 0.72rem;
