@@ -2,7 +2,7 @@
 
 Static website for Canadian Bitcoin education: **Get Off Zero** for individuals, plus a first version of **Bitcoin for businesses**.
 
-Live site (after GitHub Pages is on): `https://GSLdroid.github.io/curtis-bitcoin-site/`
+Live site: `https://curtisbitcoin.ca` (GitHub Pages). Preview while DNS settles: `https://GSLdroid.github.io/curtis-bitcoin-site/`
 
 Existing production site at [giantstepslearning.com](https://giantstepslearning.com) is **not** replaced by this repo until you point DNS here on purpose.
 
@@ -57,30 +57,17 @@ gh api -X POST repos/GSLdroid/curtis-bitcoin-site/pages \
 
 If that API call says Pages already exists, use **Settings → Pages** in the browser.
 
-## Custom domain (GoDaddy)
+## Custom domain: curtisbitcoin.ca
 
-You can either:
+GitHub Pages on this repo is set to **curtisbitcoin.ca**. `giantstepslearning.com` stays on the old user site.
 
-- **A.** Keep `giantstepslearning.com` on the current `GSLdroid.github.io` user site (today’s live site), and use a **new** domain for this project, or
-- **B.** Repoint `giantstepslearning.com` at **this** repo when you are ready to replace the live site.
+### GoDaddy DNS (website records only)
 
-Do not attach the same domain to two GitHub Pages sites at once.
+Do **not** delete MX or Microsoft 365 TXT records — those are email.
 
-### 1. Add a `CNAME` file in this repo (project root)
-
-```
-giantstepslearning.com
-```
-
-(or your new domain). Commit and push.
-
-### 2. GitHub → Settings → Pages → Custom domain
-
-Enter the domain, save, and wait for DNS check. Turn on **Enforce HTTPS** after the certificate is ready (can take up to an hour).
-
-### 3. GoDaddy DNS records
-
-**Apex domain** (`giantstepslearning.com`) — A records to GitHub Pages:
+1. GoDaddy → **My Products** → **curtisbitcoin.ca** → **DNS**.
+2. Turn **off** Domain Forwarding / parking if it is on.
+3. **A records** for `@` — delete the two parking IPs (`13.248.243.5` and `76.223.105.230`) and add:
 
 | Type | Name | Value | TTL |
 |------|------|--------|-----|
@@ -89,22 +76,26 @@ Enter the domain, save, and wait for DNS check. Turn on **Enforce HTTPS** after 
 | A | `@` | `185.199.110.153` | 600 |
 | A | `@` | `185.199.111.153` | 600 |
 
-**WWW** — CNAME:
+4. **WWW** — edit the existing CNAME (currently points at `curtisbitcoin.ca`):
 
 | Type | Name | Value | TTL |
 |------|------|--------|-----|
 | CNAME | `www` | `GSLdroid.github.io` | 600 |
 
-Optional IPv6 (AAAA) for the apex:
+Optional IPv6 (AAAA) for `@`:
 
 - `2606:50c0:8000::153`
 - `2606:50c0:8001::153`
 - `2606:50c0:8002::153`
 - `2606:50c0:8003::153`
 
-Remove old A / CNAME / forwarding records that still point at the previous host so they do not fight these.
+Keep:
 
-If you keep the old site live, **do not** change GoDaddy until you intend to cut over.
+- MX → `curtisbitcoin-ca.mail.protection.outlook.com`
+- TXT Microsoft 365 (`NETORG21059212.onmicrosoft.com`)
+- SPF TXT (update later if Outlook mail needs `include:spf.protection.outlook.com`)
+
+DNS can take a few minutes to a few hours. Then GitHub issues HTTPS. Enforce HTTPS in **Settings → Pages** after the certificate shows as ready.
 
 ## Editing content
 
