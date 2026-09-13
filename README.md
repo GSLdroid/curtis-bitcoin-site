@@ -1,4 +1,4 @@
-# Curtis Bitcoin Corporation
+# Curtis Bitcoin Company
 
 Static website for Canadian Bitcoin education: **Get Off Zero** for individuals, plus a first version of **Bitcoin for businesses**.
 
@@ -25,7 +25,7 @@ Open <http://127.0.0.1:8080/>
 
 ## Brand
 
-Public name on the pages: **Curtis Bitcoin Corporation**. Contact email and X handle still use the existing Giant Steps accounts until you replace them. Shakepay referral is unchanged.
+Public name on the pages: **Curtis Bitcoin Company**. Contact email and X handle still use the existing Giant Steps accounts until you replace them. Shakepay referral is unchanged.
 
 ## Repo layout
 
